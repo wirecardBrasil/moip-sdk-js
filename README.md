@@ -1,6 +1,6 @@
 Moip SDK JS
 =============
-[![Build Status](https://travis-ci.org/brunoosilva/moip-sdk-js.svg)](https://travis-ci.org/brunoosilva/moip-sdk-js) [![Coverage Status](https://coveralls.io/repos/brunoosilva/moip-sdk-js/badge.svg)](https://coveralls.io/r/brunoosilva/moip-sdk-js)
+[![Build Status](https://travis-ci.org/brunoosilva/moip-sdk-js.svg)](https://travis-ci.org/brunoosilva/moip-sdk-js) [![Coverage Status](https://coveralls.io/repos/github/brunoosilva/moip-sdk-js/badge.svg?branch=master)](https://coveralls.io/github/brunoosilva/moip-sdk-js?branch=master)
 
 ## What is?
 
