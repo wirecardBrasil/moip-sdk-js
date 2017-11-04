@@ -2,13 +2,11 @@ Moip SDK Node
 =============
 [![Build Status](https://travis-ci.org/brunoosilva/moip-sdk-node.svg)](https://travis-ci.org/brunoosilva/moip-sdk-node) [![Coverage Status](https://coveralls.io/repos/brunoosilva/moip-sdk-node/badge.svg)](https://coveralls.io/r/brunoosilva/moip-sdk-node)
 
-What is?
-========
+## What is?
 
-This is library for integration with Moip API.
+This is library for validate and encrypt CrediCard and integration with Moip API.
 
-Install
-=======
+## Install
 
 ```
 yarn add moip-sdk-node
@@ -16,8 +14,7 @@ yarn add moip-sdk-node
 npm i moip-sdk-node
 ```
 
-Test
-====
+## Test
 
 ```
 yarn test
@@ -25,8 +22,7 @@ yarn test
 npm test
 ```
 
-Use
-===
+## Use
 
 ```
 import { Validator, CreditCard } from 'moip-sdk-node';
