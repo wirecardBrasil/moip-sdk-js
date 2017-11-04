@@ -1,9 +1,9 @@
 {
-  "name": "moip-sdk-node",
+  "name": "moip-sdk-js",
   "version": "1.0.0",
   "description": "Moip SDK Node.js",
   "main": "dist/index.js",
-  "repository": "https://github.com/brunoosilva/moip-sdk-node",
+  "repository": "https://github.com/brunoosilva/moip-sdk-js",
   "author": "Bruno Oliveira",
   "license": "MIT",
   "devDependencies": {
