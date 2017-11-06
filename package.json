@@ -1,8 +1,12 @@
 {
   "name": "moip-sdk-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Moip SDK Node.js",
   "main": "dist/index.js",
+  "files": [
+    "dist",
+    "src"
+  ],
   "repository": "https://github.com/brunoosilva/moip-sdk-js",
   "author": "Bruno Oliveira",
   "license": "MIT",
@@ -17,8 +21,10 @@
     "node-rsa": "^0.4.2"
   },
   "scripts": {
-    "build": "babel src -d dist",
+    "build": "babel src --out-dir dist",
+    "clean": "rm -rf dist",
     "test": "babel-node ./node_modules/.bin/babel-istanbul cover run-test.js",
+    "prepublish": "yarn run clean && yarn run test && yarn run build",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   }
 }
