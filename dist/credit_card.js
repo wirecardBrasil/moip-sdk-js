@@ -59,7 +59,7 @@ var CreditCard = function () {
         return null;
       }
 
-      var rsakey = new _nodeRsa2.default(this.pubKey);
+      var rsakey = new _nodeRsa2.default(this.pubKey, { encryptionScheme: 'pkcs1' });
 
       var toEncrypt = ['number=' + number, 'cvc=' + cvc, 'expirationMonth=' + expMonth, 'expirationYear=' + expYear].join('&');
 
