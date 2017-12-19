@@ -1,9 +1,9 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
-exports.CreditCard = exports.Validator = undefined;
+exports.MoipCreditCard = exports.MoipValidator = undefined;
 
 var _validator = require('./validator');
 
@@ -15,5 +15,5 @@ var _credit_card2 = _interopRequireDefault(_credit_card);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.Validator = _validator2.default;
-exports.CreditCard = _credit_card2.default;
+exports.MoipValidator = _validator2.default;
+exports.MoipCreditCard = _credit_card2.default;

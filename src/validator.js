@@ -1,4 +1,4 @@
-export default class Validator {
+export default class MoipValidator {
 	static get _eloBins() {
 		return [
 			'401178',

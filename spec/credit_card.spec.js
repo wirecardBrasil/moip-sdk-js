@@ -1,6 +1,6 @@
-import CreditCard from '../src/credit_card';
+import MoipCreditCard from '../src/credit_card';
 
-describe('CreditCard', () => {
+describe('MoipCreditCard', () => {
 	let pubKey;
 	let creditCard;
 	let cc;
@@ -27,29 +27,29 @@ WwIDAQAB
  
 	describe('.hash', () => {
 		it('succesfully generates hash if all properties are given', () => {
-			const hash = CreditCard.setPubKey(pubKey).setCreditCard(creditCard);
+			const hash = MoipCreditCard.setPubKey(pubKey).setCreditCard(creditCard);
 			expect(hash).not.toBeUndefined();
 			expect(hash).not.toBeNull();
 	    });
 
 	    it('does not generate a hash if any property is missing', () => {
-	    	cc = CreditCard.setPubKey(null)
+	    	cc = MoipCreditCard.setPubKey(null)
 	    		.setCreditCard(creditCard);
       		expect(cc.hash()).toBeNull();
 
-      		cc = CreditCard.setPubKey(pubKey)
+      		cc = MoipCreditCard.setPubKey(pubKey)
       			.setCreditCard(Object.assign({}, creditCard, { number: null }));
       		expect(cc.hash()).toBeNull();
 
-      		cc = CreditCard.setPubKey(pubKey)
+      		cc = MoipCreditCard.setPubKey(pubKey)
       			.setCreditCard(Object.assign({}, creditCard, { cvc: null }));
       		expect(cc.hash()).toBeNull();
 
-      		cc = CreditCard.setPubKey(pubKey)
+      		cc = MoipCreditCard.setPubKey(pubKey)
       			.setCreditCard(Object.assign({}, creditCard, { expMonth: null }));
       		expect(cc.hash()).toBeNull();
 
-      		cc = CreditCard.setPubKey(pubKey)
+      		cc = MoipCreditCard.setPubKey(pubKey)
       			.setCreditCard(Object.assign({}, creditCard, { expYear: null }));
       		expect(cc.hash()).toBeNull();
     	});
@@ -57,7 +57,7 @@ WwIDAQAB
 
 	describe('.isValid', () => {
 		beforeAll(() => {
-			cc = CreditCard.setPubKey(pubKey).setCreditCard(creditCard);
+			cc = MoipCreditCard.setPubKey(pubKey).setCreditCard(creditCard);
 		});
 
 		it('accepts a valid card', () => {
@@ -91,12 +91,12 @@ WwIDAQAB
 
   	describe('.cardType', () => {
   		it('identifies the cardType', () => {
-  			const cardType = CreditCard.setPubKey(pubKey).setCreditCard(creditCard).cardType();
+  			const cardType = MoipCreditCard.setPubKey(pubKey).setCreditCard(creditCard).cardType();
       		expect(cardType).toEqual('VISA');
     	});
     
     	it('does NOT identify the cardType if number is missing', () => {
-      		const cardType = CreditCard.setPubKey(pubKey)
+      		const cardType = MoipCreditCard.setPubKey(pubKey)
       			.setCreditCard(Object.assign({}, creditCard, {number: null}))
       			.cardType();
 
@@ -106,7 +106,7 @@ WwIDAQAB
 
   	describe('property accessors', () => {
   		it('provides access to all properties', () => {
-  			const cc = CreditCard.setCreditCard(creditCard);
+  			const cc = MoipCreditCard.setCreditCard(creditCard);
   			expect(cc.getCreditCard()).toEqual(creditCard);
     	});
   	});

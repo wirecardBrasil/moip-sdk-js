@@ -18,12 +18,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var CreditCard = function () {
-  function CreditCard() {
-    _classCallCheck(this, CreditCard);
+var MoipCreditCard = function () {
+  function MoipCreditCard() {
+    _classCallCheck(this, MoipCreditCard);
   }
 
-  _createClass(CreditCard, null, [{
+  _createClass(MoipCreditCard, null, [{
     key: 'setCreditCard',
     value: function setCreditCard(creditCard) {
       if (creditCard) {
@@ -78,7 +78,7 @@ var CreditCard = function () {
     }
   }]);
 
-  return CreditCard;
+  return MoipCreditCard;
 }();
 
-exports.default = CreditCard;
+exports.default = MoipCreditCard;

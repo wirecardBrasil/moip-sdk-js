@@ -8,12 +8,12 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var Validator = function () {
-    function Validator() {
-        _classCallCheck(this, Validator);
+var MoipValidator = function () {
+    function MoipValidator() {
+        _classCallCheck(this, MoipValidator);
     }
 
-    _createClass(Validator, null, [{
+    _createClass(MoipValidator, null, [{
         key: '_isInEloBinRanges',
         value: function _isInEloBinRanges(bin) {
             var numbin = parseInt(bin);
@@ -269,7 +269,7 @@ var Validator = function () {
         }
     }]);
 
-    return Validator;
+    return MoipValidator;
 }();
 
-exports.default = Validator;
+exports.default = MoipValidator;
