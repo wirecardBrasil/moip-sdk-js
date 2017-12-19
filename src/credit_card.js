@@ -32,7 +32,7 @@ export default class MoipCreditCard {
     		return null;
     	}
 
-    	const rsakey = new NodeRSA(this.pubKey);
+    	const rsakey = new NodeRSA(this.pubKey, { encryptionScheme: 'pkcs1' });
 
     	const toEncrypt = [
     		`number=${number}`,
