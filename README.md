@@ -4,7 +4,7 @@ Moip SDK JS
 
 ## What is?
 
-This is library for validate and encrypt CrediCard and integration with Moip API avoiding import conflicts.
+This is library for validate and encrypt CrediCard and integration with Moip API.
 
 ## Install
 
