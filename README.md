@@ -25,46 +25,46 @@ npm test
 ## Use
 
 ```
-import { Validator, CreditCard } from 'moip-sdk-js';
+import { MoipValidator, MoipCreditCard } from 'moip-sdk-js';
 // or
-const { Validator, CreditCard } from 'moip-sdk-js';
+const { MoipValidator, MoipCreditCard } from 'moip-sdk-js';
 ```
 
-## Validator
+## MoipValidator
 
 ### Validate Credit Card Number
 ``` javascript
 const creditCardNumber = '4111111111111111';
-Validator.isValidNumber(creditCardNumber);	//return true
+MoipValidator.isValidNumber(creditCardNumber);	//return true
 ```
 
 ### Validate Card Verification Code (CVC)
 ``` javascript
 const creditCardNumber = '4111111111111111';
 const cvc = '123';
-Validator.isSecurityCodeValid(creditCardNumber, cvc);	//return true
+MoipValidator.isSecurityCodeValid(creditCardNumber, cvc);	//return true
 ```
 
 ### Validate Expire Date
 ``` javascript
 const month = '10';
 const year = '2020';
-Validator.isExpiryDateValid(month, years);	//return true
+MoipValidator.isExpiryDateValid(month, years);	//return true
 ```
 
 ### Card types
 ``` javascript
-Validator.cardType('5105105105105100');    //return [Object]MASTERCARD
-Validator.cardType('4111111111111111');    //return [Object]VISA
-Validator.cardType('341111111111111');     //return [Object]AMEX
-Validator.cardType('30569309025904');      //return [Object]DINERS
-Validator.cardType('3841001111222233334'); //return [Object]HIPERCARD
-Validator.cardType('4514160123456789');    //return [Object]ELO
-Validator.cardType('6370950000000005');    //return [Object]HIPER
-Validator.cardType('9191919191919191');    //return [Object]null
+MoipValidator.cardType('5105105105105100');    //return [Object]MASTERCARD
+MoipValidator.cardType('4111111111111111');    //return [Object]VISA
+MoipValidator.cardType('341111111111111');     //return [Object]AMEX
+MoipValidator.cardType('30569309025904');      //return [Object]DINERS
+MoipValidator.cardType('3841001111222233334'); //return [Object]HIPERCARD
+MoipValidator.cardType('4514160123456789');    //return [Object]ELO
+MoipValidator.cardType('6370950000000005');    //return [Object]HIPER
+MoipValidator.cardType('9191919191919191');    //return [Object]null
 ```
 
-## CreditCard
+## MoipCreditCard
 
 ### Encrypt Credit Card (HASH)
 ``` javascript
@@ -77,7 +77,7 @@ const creditCard = {
 
 const pubKey = `-----BEGIN PUBLIC KEY-----...`;
 
-const hash = CreditCard.setPubKey(pubKey).setCreditCard(creditCard).hash(); // Hash Base64
+const hash = MoipCreditCard.setPubKey(pubKey).setCreditCard(creditCard).hash(); // Hash Base64
 ```
 
 ### License

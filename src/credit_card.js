@@ -1,11 +1,11 @@
-import Validator from './validator';
+import MoipValidator from './validator';
 import NodeRSA from 'node-rsa';
 
-export default class CreditCard {
+export default class MoipCreditCard {
 	static setCreditCard(creditCard) {
 		if(creditCard) {
 			this.creditCard = Object.assign(creditCard, {
-				number: Validator.normalizeCardNumber(creditCard.number)
+				number: MoipValidator.normalizeCardNumber(creditCard.number)
 			});
 		}
 
@@ -32,7 +32,7 @@ export default class CreditCard {
     		return null;
     	}
 
-    	const rsakey = new NodeRSA(this.pubKey);
+    	const rsakey = new NodeRSA(this.pubKey, { encryptionScheme: 'pkcs1' });
 
     	const toEncrypt = [
     		`number=${number}`,
@@ -45,11 +45,11 @@ export default class CreditCard {
   	}
 
   	static isValid() {
-  		return Validator.isValid(this.creditCard);
+  		return MoipValidator.isValid(this.creditCard);
   	}
 
   	static cardType() {
-    	const type =  Validator.cardType(this.creditCard.number);
+    	const type =  MoipValidator.cardType(this.creditCard.number);
     	return type ? type.brand : null;
   	}
 }

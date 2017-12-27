@@ -1,80 +1,80 @@
-import Validator from '../src/validator';
+import MoipValidator from '../src/validator';
 
-describe('Validator', () =>  {
+describe('MoipValidator', () =>  {
   let assertCard;
 
   beforeAll(() => {
     assertCard = (cardNumber, brand, loose = false) => 
-      expect(Validator.cardType(cardNumber, loose)).toEqual({ brand });
+      expect(MoipValidator.cardType(cardNumber, loose)).toEqual({ brand });
   });
 
   describe('.isValidNumber', () => {
     it('validates numeric format', () =>  {
-      const valid = Validator.isValidNumber(4111111111111111);
+      const valid = MoipValidator.isValidNumber(4111111111111111);
       expect(valid).toBe(true);
     });
     
     it('validates string format', () =>  {
-      const valid = Validator.isValidNumber('4111111111111111');
+      const valid = MoipValidator.isValidNumber('4111111111111111');
       expect(valid).toBe(true);
     });
     
     it('validates format w/ whitespace', () =>  {
-      const valid = Validator.isValidNumber('4111 1111 1111 1111');
+      const valid = MoipValidator.isValidNumber('4111 1111 1111 1111');
       expect(valid).toBe(true);
     });
     
     it('validates format w/ dash', () =>  {
-      const valid = Validator.isValidNumber('4111-1111-1111-1111');
+      const valid = MoipValidator.isValidNumber('4111-1111-1111-1111');
       expect(valid).toBe(true);
     });
     
     it('validates format w/ dot', () =>  {
-      const valid = Validator.isValidNumber('4111.1111.1111.1111');
+      const valid = MoipValidator.isValidNumber('4111.1111.1111.1111');
       expect(valid).toBe(true);
     });
     
     it('recognizes an invalid number (Luhn)', () =>  {
-      const valid = Validator.isValidNumber(222222222222);
+      const valid = MoipValidator.isValidNumber(222222222222);
      expect(valid).toBe(false);
     });
   });
 
   describe('.isExpiredDate', () => {
     it('recognizes an expired date (long format)', () =>  {
-      const valid = Validator.isExpiredDate(5, 2013);
+      const valid = MoipValidator.isExpiredDate(5, 2013);
       expect(valid).toBe(true);
     });
 
     it('recognizes an expired date (short format)', () =>  {
-      const valid = Validator.isExpiredDate(5, 98);
+      const valid = MoipValidator.isExpiredDate(5, 98);
       expect(valid).toBe(true);
     });
 
     it('recognizes a future date)', () =>  {
-      const valid = Validator.isExpiredDate(1, 42);
+      const valid = MoipValidator.isExpiredDate(1, 42);
       expect(valid).toBe(false);
     });
   });
 
   describe('.isExpiryDateValid', () => {
     it('recognizes a valid date (numeric format)', () => {
-      const valid = Validator.isExpiryDateValid(5, 42);
+      const valid = MoipValidator.isExpiryDateValid(5, 42);
       expect(valid).toBe(true);
     });
 
     it('recognizes a valid date (non numeric format)', () => {
-      const valid = Validator.isExpiryDateValid('5', '42');
+      const valid = MoipValidator.isExpiryDateValid('5', '42');
       expect(valid).toBe(true);
     });
       
     it('recognizes an invalid date (expired)', () => {
-      const valid = Validator.isExpiryDateValid(5, 98);
+      const valid = MoipValidator.isExpiryDateValid(5, 98);
       expect(valid).toBe(false);
     });
     
     it('recognizes an invalid date (non numeric format)', () => {
-      const valid = Validator.isExpiryDateValid('ab', 'cd');
+      const valid = MoipValidator.isExpiryDateValid('ab', 'cd');
       expect(valid).toBe(false);
     });
   });
@@ -164,17 +164,17 @@ describe('Validator', () =>  {
     
   describe('.isSecurityCodeValid', () => {
     it('recognizes a valid 3 digit cvv', () => {
-      const valid = Validator.isSecurityCodeValid('5105105105105100', '123');
+      const valid = MoipValidator.isSecurityCodeValid('5105105105105100', '123');
       expect(valid).toBe(true);
     });
     
     it('recognizes an invalid 4 digit cvv', () => {
-      const valid = Validator.isSecurityCodeValid('5105105105105100', '1234');
+      const valid = MoipValidator.isSecurityCodeValid('5105105105105100', '1234');
       expect(valid).toBe(false);
     });
     
     it('recognizes a valid 4 digit cvv (AMEX)', () => {
-      const valid = Validator.isSecurityCodeValid('341111111111111', '1234');
+      const valid = MoipValidator.isSecurityCodeValid('341111111111111', '1234');
       expect(valid).toBe(true);
     });
   });

@@ -1,7 +1,7 @@
-import Validator from './validator';
-import CreditCard from './credit_card';
+import MoipValidator from './validator';
+import MoipCreditCard from './credit_card';
 
 export {
-	Validator,
-	CreditCard,
+  MoipValidator,
+  MoipCreditCard,
 };
