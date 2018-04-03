@@ -1,7 +1,12 @@
 import MoipValidator from './validator';
-import NodeRSA from 'node-rsa';
+import Encrypt from './encrypt';
 
 export default class MoipCreditCard {
+  static setEncrypter(encrypter, name) {
+    Encrypt.setEncrypter(encrypter, name);
+    return this;
+  }
+
 	static setCreditCard(creditCard) {
 		if(creditCard) {
 			this.creditCard = Object.assign(creditCard, {
@@ -22,26 +27,25 @@ export default class MoipCreditCard {
 	}
 
 	static hash() {
-		const { number, cvc, expMonth, expYear } = this.creditCard;
+		const { number, cvc, expirationMonth, expirationYear } = this.creditCard;
 
-    	if (!this.pubKey || 
-    		!number || 
-    		!cvc || 
-    		!expMonth || 
-    		!expYear) {
+    	if (!this.pubKey ||
+    		!number ||
+    		!cvc ||
+    		!expirationMonth ||
+    		!expirationYear) {
+    		console.error('Cartão inválido');
     		return null;
     	}
-
-    	const rsakey = new NodeRSA(this.pubKey, { encryptionScheme: 'pkcs1' });
 
     	const toEncrypt = [
     		`number=${number}`,
     		`cvc=${cvc}`,
-    		`expirationMonth=${expMonth}`,
-    		`expirationYear=${expYear}`,
+    		`expirationMonth=${expirationMonth}`,
+    		`expirationYear=${expirationYear}`,
     	].join('&');
 
-    	return rsakey.encrypt(toEncrypt, 'base64');
+      return Encrypt.encrypt(toEncrypt, this.pubKey);
   	}
 
   	static isValid() {

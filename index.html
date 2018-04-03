@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Moip SDK</title>
+
+    <script type="text/javascript"
+            src="dist/moip-sdk-js.js"></script>
+
+</head>
+<body>
+
+<script>
+  MoipSdkJs.MoipCreditCard
+    .setPubKey(`-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoBttaXwRoI1Fbcond5mS
+7QOb7X2lykY5hvvDeLJelvFhpeLnS4YDwkrnziM3W00UNH1yiSDU+3JhfHu5G387
+O6uN9rIHXvL+TRzkVfa5iIjG+ap2N0/toPzy5ekpgxBicjtyPHEgoU6dRzdszEF4
+ItimGk5ACx/lMOvctncS5j3uWBaTPwyn0hshmtDwClf6dEZgQvm/dNaIkxHKV+9j
+Mn3ZfK/liT8A3xwaVvRzzuxf09xJTXrAd9v5VQbeWGxwFcW05oJulSFjmJA9Hcmb
+DYHJT+sG2mlZDEruCGAzCVubJwGY1aRlcs9AQc1jIm/l8JwH7le2kpk3QoX+gz0w
+WwIDAQAB
+-----END PUBLIC KEY-----`)
+    .setCreditCard({
+      number  : '4012001037141112',
+      cvc     : '123',
+      expirationMonth: '05',
+      expirationYear : '18'
+    })
+    .hash()
+    .then(hash => console.log('hash', hash));
+
+</script>
+</body>
+</html>

@@ -1,3 +1,4 @@
+import JSEncrypt from 'jsencrypt';
 import MoipCreditCard from '../src/credit_card';
 
 describe('MoipCreditCard', () => {
@@ -27,7 +28,7 @@ WwIDAQAB
  
 	describe('.hash', () => {
 		it('succesfully generates hash if all properties are given', () => {
-			const hash = MoipCreditCard.setPubKey(pubKey).setCreditCard(creditCard);
+			const hash = MoipCreditCard.setPubKey(pubKey).setCreditCard(creditCard).hash();
 			expect(hash).not.toBeUndefined();
 			expect(hash).not.toBeNull();
 	    });
