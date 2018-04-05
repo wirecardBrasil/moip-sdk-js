@@ -4,13 +4,14 @@ Moip SDK JS
 
 ## O que é?
 
-SDK Javascript que possibilita a criptografia de dados sensíveis de cartão no browser do cliente assim como identificação e validação de números de cartão de crédito. Para Web / React Native / Ionic 1 / Ionic 3.
+SDK Javascript que possibilita a criptografia de dados sensíveis de cartão no browser do cliente assim como identificação e validação de números de cartão de crédito. Para Web / React Native / Ionic 1 / Ionic 3 / NodeJS.
 
 ## Plataformas
 
 * [Web e Ionic 1](brunoosilva/moip-sdk-js#web-e-ionic-1)
 * [Ionic 3](brunoosilva/moip-sdk-js#ionic-3)
 * [React Native](brunoosilva/moip-sdk-js#react-native)
+* [NodeJS](brunoosilva/moip-sdk-js#nodejs)
 
 ## Observação
 
@@ -100,6 +101,37 @@ import { MoipCreditCard } from 'moip-sdk-js';
 
 MoipCreditCard
 	.setEncrypter(RSA, 'react-native')
+	.setPubKey(pubKey)
+	.setCreditCard({
+	    number  : '4012001037141112',
+	    cvc     : '123',
+	    expirationMonth: '05',
+	    expirationYear : '18'
+	})
+	.hash()
+	.then(hash => console.log('hash', hash));
+```
+
+### NodeJS
+
+Neste cenário, é necessário instalar e importar uma lib de criptografia de terceiro, para gerar o hash do carto de crédito. Após importar, lembrar de passar o contexto dele atravéz do método **setEncrypter**, como mostrado abaixo no exemplo.
+
+#### Instalar
+
+```
+yarn add moip-sdk-js node-rsa
+// or
+npm i moip-sdk-js node-rsa --save
+```
+
+#### Usar
+
+```javascript
+import NodeRSA from 'node-rsa';
+import { MoipCreditCard } from 'moip-sdk-js';
+
+MoipCreditCard
+	.setEncrypter(NodeRSA, 'node')
 	.setPubKey(pubKey)
 	.setCreditCard({
 	    number  : '4012001037141112',
