@@ -8,9 +8,9 @@ SDK Javascript que possibilita a criptografia de dados sensíveis de cartão no 
 
 ## Plataformas
 
-* [Web e Ionic 1](brunoosilva/moip-sdk-js#web-e-ionic-1)
-* [Ionic 3](brunoosilva/moip-sdk-js#ionic-3)
-* [React Native](brunoosilva/moip-sdk-js#react-native)
+* [Web e Ionic 1](#web-e-ionic-1)
+* [Ionic 3](#ionic-3)
+* [React Native](#react-native)
 
 ## Observação
 
