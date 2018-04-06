@@ -11,6 +11,7 @@
   "author": "Bruno Oliveira",
   "license": "MIT",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-istanbul": "^0.12.2",
     "babel-loader": "^7.1.3",
