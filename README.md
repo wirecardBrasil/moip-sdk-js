@@ -3,8 +3,8 @@
 # Moip SDK Javascript (criptografia de cartão)
 > SDK Javascript para a criptografia de cartões de crédito.
 
-[![Build Status](https://travis-ci.org/brunoosilva/moip-sdk-js.svg)](https://travis-ci.org/brunoosilva/moip-sdk-js) 
-[![Coverage Status](https://coveralls.io/repos/github/brunoosilva/moip-sdk-js/badge.svg?branch=master)](https://coveralls.io/github/brunoosilva/moip-sdk-js?branch=master)
+[![Build Status](https://travis-ci.org/moip/moip-sdk-js.svg)](https://travis-ci.org/brunoosilva/moip-sdk-js) 
+[![Coverage Status](https://coveralls.io/repos/github/moip/moip-sdk-js/badge.svg?branch=master)](https://coveralls.io/github/moip/moip-sdk-js?branch=master)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/moip/moip-sdk-js/blob/master/LICENSE)
 
 ## O que é?
