@@ -1,5 +1,6 @@
 language: node_js
 node_js:
-  - 7.2
+  - 8.11
+cache: yarn
 after_success:
-  - npm run coveralls
+  - yarn coveralls
