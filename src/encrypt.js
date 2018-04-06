@@ -24,6 +24,8 @@ export default class Encrypt {
           			break;
 			}
 		}
+
+		return Promise.resolve(null);
 	}
 
 	static jsEncrypt(value, pubKey) {
