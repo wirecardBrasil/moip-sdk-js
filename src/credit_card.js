@@ -2,10 +2,10 @@ import MoipValidator from './validator';
 import Encrypt from './encrypt';
 
 export default class MoipCreditCard {
-  static setEncrypter(encrypter, name) {
-    Encrypt.setEncrypter(encrypter, name);
-    return this;
-  }
+	static setEncrypter(encrypter, name) {
+		Encrypt.setEncrypter(encrypter, name);
+		return this;
+	}
 
 	static setCreditCard(creditCard) {
 		if(creditCard) {
@@ -17,9 +17,9 @@ export default class MoipCreditCard {
 		return this;
 	}
 
-  static getCreditCard(){
-    return this.creditCard;
-  }
+	static getCreditCard() {
+		return this.creditCard;
+	}
 
 	static setPubKey(pubKey) {
 		this.pubKey = pubKey;
@@ -34,8 +34,7 @@ export default class MoipCreditCard {
     		!cvc ||
     		!expirationMonth ||
     		!expirationYear) {
-    		console.error('Cartão inválido');
-    		return null;
+    		return Promise.resolve(null);
     	}
 
     	const toEncrypt = [
@@ -45,7 +44,7 @@ export default class MoipCreditCard {
     		`expirationYear=${expirationYear}`,
     	].join('&');
 
-      return Encrypt.encrypt(toEncrypt, this.pubKey);
+    	return Encrypt.encrypt(toEncrypt, this.pubKey);
   	}
 
   	static isValid() {

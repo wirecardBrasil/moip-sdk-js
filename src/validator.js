@@ -169,11 +169,11 @@ export default class MoipValidator {
     }
 
     static isValid(creditCard) {
-    	const { number, cvc, expMonth, expYear } = creditCard;
+    	const { number, cvc, expirationMonth, expirationYear } = creditCard;
 
     	return  this.isValidNumber(number) && 
     			this.isSecurityCodeValid(number, cvc) &&
-    			this.isExpiryDateValid(expMonth, expYear);
+    			this.isExpiryDateValid(expirationMonth, expirationYear);
     }
 
     static cardType(creditCardNumber, loose) {

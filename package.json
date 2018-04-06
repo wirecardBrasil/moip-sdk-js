@@ -28,5 +28,8 @@
     "build": "WEBPACK_ENV=module webpack",
     "test": "babel-node ./node_modules/.bin/babel-istanbul cover run-test.js",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+  },
+  "dependencies": {
+    "node-rsa": "^0.4.2"
   }
 }

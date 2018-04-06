@@ -44,7 +44,7 @@ MoipSdkJs.MoipCreditCard
 	    number  : '4012001037141112',
 	    cvc     : '123',
 	    expirationMonth: '05',
-      	    expirationYear : '18'
+  	    expirationYear : '18'
     	})
 	.hash()
 	.then(hash => console.log('hash', hash));
