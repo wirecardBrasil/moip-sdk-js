@@ -8,10 +8,10 @@ SDK Javascript que possibilita a criptografia de dados sensíveis de cartão no 
 
 ## Plataformas
 
-* [Web e Ionic 1](brunoosilva/moip-sdk-js#web-e-ionic-1)
-* [Ionic 3](brunoosilva/moip-sdk-js#ionic-3)
-* [React Native](brunoosilva/moip-sdk-js#react-native)
-* [NodeJS](brunoosilva/moip-sdk-js#nodejs)
+* [Web e Ionic 1](#web-e-ionic-1)
+* [Ionic 3](#ionic-3)
+* [React Native](#react-native)
+* [NodeJS](#nodejs)
 
 
 ## Observação
@@ -155,7 +155,7 @@ Para o uso Web ou Ionic 1, deve usar a classe da seguinte forma:
 MoipSdkJs.MoipValidator.isValidNumber(12345); // return true/false
 ```
 
-Para o uso React Native ou Ionic 3, deve usar a classe da seguinte forma:
+Para o uso React Native, Ionic 3 ou NodeJS, deve usar a classe da seguinte forma:
 ```javascript
 import { MoipValidator } from 'moip-sdk-js';
 MoipValidator.isValidNumber(12345); // return true/false
