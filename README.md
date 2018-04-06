@@ -1,6 +1,11 @@
-Moip SDK JS
-=============
-[![Build Status](https://travis-ci.org/brunoosilva/moip-sdk-js.svg)](https://travis-ci.org/brunoosilva/moip-sdk-js) [![Coverage Status](https://coveralls.io/repos/github/brunoosilva/moip-sdk-js/badge.svg?branch=master)](https://coveralls.io/github/brunoosilva/moip-sdk-js?branch=master)
+<img src="https://gist.githubusercontent.com/joaolucasl/00f53024cecf16410d5c3212aae92c17/raw/1789a2131ee389aeb44e3a9d5333f59cfeebc089/moip-icon.png" align="right" />
+
+# Moip SDK Javascript (criptografia de cartão)
+> SDK Javascript para a criptografia de cartões de crédito.
+
+[![Build Status](https://travis-ci.org/brunoosilva/moip-sdk-js.svg)](https://travis-ci.org/brunoosilva/moip-sdk-js) 
+[![Coverage Status](https://coveralls.io/repos/github/brunoosilva/moip-sdk-js/badge.svg?branch=master)](https://coveralls.io/github/brunoosilva/moip-sdk-js?branch=master)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/moip/moip-sdk-js/blob/master/LICENSE)
 
 ## O que é?
 
@@ -38,22 +43,22 @@ Neste cenário, a lib de criptografia já está compilada junto com o código do
 <script src="moip-sdk-js.js"></script>
 
 <script>
-MoipSdkJs.MoipCreditCard
-    	.setPubKey(pubKey)
-	.setCreditCard({
-	    number  : '4012001037141112',
-	    cvc     : '123',
-	    expirationMonth: '05',
-  	    expirationYear : '18'
-    	})
-	.hash()
-	.then(hash => console.log('hash', hash));
+    MoipSdkJs.MoipCreditCard
+        .setPubKey(pubKey)
+        .setCreditCard({
+            number: '4012001037141112',
+            cvc: '123',
+            expirationMonth: '05',
+            expirationYear: '18'
+        })
+        .hash()
+        .then(hash => console.log('hash', hash));
 </script>
 ```
 
 ### Ionic 3
 
-Neste cenário, é necessário instalar e importar uma lib de criptografia de terceiro, para gerar o hash do carto de crédito. Após importar, lembrar de passar o contexto dele atravéz do método **setEncrypter**, como mostrado abaixo no exemplo.
+Neste cenário, é necessário instalar e importar uma lib de criptografia de terceiro, para gerar o hash do cartão de crédito. Após importar, lembrar de passar o contexto dele atravéz do método **setEncrypter**, como mostrado abaixo no exemplo.
 
 #### Instalar
 
@@ -71,20 +76,20 @@ import { MoipCreditCard } from 'moip-sdk-js';
 
 MoipCreditCard
 	.setEncrypter(jsencrypt, 'ionic')
-    	.setPubKey(pubKey)
+    .setPubKey(pubKey)
 	.setCreditCard({
-	    number  : '4012001037141112',
-	    cvc     : '123',
+	    number: '4012001037141112',
+	    cvc: '123',
 	    expirationMonth: '05',
-      	    expirationYear : '18'
-    	})
+        expirationYear: '18'
+    })
 	.hash()
 	.then(hash => console.log('hash', hash));
 ```
 
 ### React Native
 
-Neste cenário, é necessário instalar e importar uma lib de criptografia de terceiro, para gerar o hash do carto de crédito. Após importar, lembrar de passar o contexto dele atravéz do método **setEncrypter**, como mostrado abaixo no exemplo.
+Neste cenário, é necessário instalar e importar uma lib de criptografia de terceiro para gerar o hash do cartão de crédito. Após importar, lembrar de passar o contexto dele atravéz do método **setEncrypter**, como mostrado abaixo no exemplo.
 
 #### Instalar
 
@@ -104,10 +109,10 @@ MoipCreditCard
 	.setEncrypter(RSA, 'react-native')
 	.setPubKey(pubKey)
 	.setCreditCard({
-	    number  : '4012001037141112',
-	    cvc     : '123',
+	    number: '4012001037141112',
+	    cvc: '123',
 	    expirationMonth: '05',
-	    expirationYear : '18'
+	    expirationYear: '18'
 	})
 	.hash()
 	.then(hash => console.log('hash', hash));
@@ -115,7 +120,7 @@ MoipCreditCard
 
 ### NodeJS
 
-Neste cenário, é necessário instalar e importar uma lib de criptografia de terceiro, para gerar o hash do carto de crédito. Após importar, lembrar de passar o contexto dele atravéz do método **setEncrypter**, como mostrado abaixo no exemplo.
+Neste cenário, é necessário instalar e importar uma lib de criptografia de terceiro para gerar o hash do cartão de crédito. Após importar, lembrar de passar o contexto dele atravéz do método **setEncrypter**, como mostrado abaixo no exemplo.
 
 #### Instalar
 
@@ -135,10 +140,10 @@ MoipCreditCard
 	.setEncrypter(NodeRSA, 'node')
 	.setPubKey(pubKey)
 	.setCreditCard({
-	    number  : '4012001037141112',
-	    cvc     : '123',
+	    number: '4012001037141112',
+	    cvc: '123',
 	    expirationMonth: '05',
-	    expirationYear : '18'
+	    expirationYear: '18'
 	})
 	.hash()
 	.then(hash => console.log('hash', hash));
@@ -193,6 +198,11 @@ MoipValidator.cardType('6370950000000005');    //return [Object]HIPER
 MoipValidator.cardType('9191919191919191');    //return [Object]null
 ```
 
+## :heart: Contributors :heart:
+
+- [Bruno Oliveira](https://github.com/brunoosilva)
+- [Reneé Rojas](https://github.com/reneerojas)
+
 ## Licença
 
-MIT
+[The MIT License](https://github.com/moip/moip-sdk-js/blob/master/LICENSE)
