@@ -75,16 +75,16 @@ import jsencrypt from 'jsencrypt';
 import { MoipCreditCard } from 'moip-sdk-js';
 
 MoipCreditCard
-	.setEncrypter(jsencrypt, 'ionic')
+    .setEncrypter(jsencrypt, 'ionic')
     .setPubKey(pubKey)
-	.setCreditCard({
-	    number: '4012001037141112',
-	    cvc: '123',
-	    expirationMonth: '05',
+    .setCreditCard({
+        number: '4012001037141112',
+        cvc: '123',
+        expirationMonth: '05',
         expirationYear: '18'
     })
-	.hash()
-	.then(hash => console.log('hash', hash));
+    .hash()
+    .then(hash => console.log('hash', hash));
 ```
 
 ### React Native
@@ -106,16 +106,16 @@ import { RSA } from 'react-native-rsa-native';
 import { MoipCreditCard } from 'moip-sdk-js';
 
 MoipCreditCard
-	.setEncrypter(RSA, 'react-native')
-	.setPubKey(pubKey)
-	.setCreditCard({
-	    number: '4012001037141112',
-	    cvc: '123',
-	    expirationMonth: '05',
-	    expirationYear: '18'
-	})
-	.hash()
-	.then(hash => console.log('hash', hash));
+    .setEncrypter(RSA, 'react-native')
+    .setPubKey(pubKey)
+    .setCreditCard({
+        number: '4012001037141112',
+        cvc: '123',
+        expirationMonth: '05',
+        expirationYear: '18'
+    })
+    .hash()
+    .then(hash => console.log('hash', hash));
 ```
 
 ### NodeJS
@@ -137,16 +137,16 @@ import NodeRSA from 'node-rsa';
 import { MoipCreditCard } from 'moip-sdk-js';
 
 MoipCreditCard
-	.setEncrypter(NodeRSA, 'node')
-	.setPubKey(pubKey)
-	.setCreditCard({
-	    number: '4012001037141112',
-	    cvc: '123',
-	    expirationMonth: '05',
-	    expirationYear: '18'
-	})
-	.hash()
-	.then(hash => console.log('hash', hash));
+    .setEncrypter(NodeRSA, 'node')
+    .setPubKey(pubKey)
+    .setCreditCard({
+        number: '4012001037141112',
+        cvc: '123',
+        expirationMonth: '05',
+        expirationYear: '18'
+    })
+    .hash()
+    .then(hash => console.log('hash', hash));
 ```
 
 
@@ -167,27 +167,27 @@ MoipValidator.isValidNumber(12345); // return true/false
 ```
 
 ### Número do cartão de crédito
-``` javascript
+```javascript
 const creditCardNumber = '4111111111111111';
 MoipValidator.isValidNumber(creditCardNumber);	//return true/false
 ```
 
 ### Código de segurança do cartão de crédito (CVC)
-``` javascript
+```javascript
 const creditCardNumber = '4111111111111111';
 const cvc = '123';
 MoipValidator.isSecurityCodeValid(creditCardNumber, cvc); //return true/false
 ```
 
 ### Data de expiração do cartão de crédito
-``` javascript
+```javascript
 const month = '10';
 const year = '2020';
-MoipValidator.isExpiryDateValid(month, years);	//return true/false
+MoipValidator.isExpiryDateValid(month, year);	//return true/false
 ```
 
 ### Bandeira dos cartões
-``` javascript
+```javascript
 MoipValidator.cardType('5105105105105100');    //return [Object]MASTERCARD
 MoipValidator.cardType('4111111111111111');    //return [Object]VISA
 MoipValidator.cardType('341111111111111');     //return [Object]AMEX
