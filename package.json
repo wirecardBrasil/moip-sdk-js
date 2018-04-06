@@ -4,8 +4,7 @@
   "description": "Moip SDK Node.js",
   "main": "index.js",
   "files": [
-    "dist",
-    "src"
+    "index.js"
   ],
   "repository": "https://github.com/brunoosilva/moip-sdk-js",
   "author": "Bruno Oliveira",
@@ -29,7 +28,8 @@
     "build:lib": "WEBPACK_ENV=lib webpack",
     "build": "WEBPACK_ENV=module webpack",
     "test": "babel-node ./node_modules/.bin/babel-istanbul cover run-test.js",
-    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "publish": ""
   },
   "dependencies": {
     "node-rsa": "^0.4.2"
