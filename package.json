@@ -1,6 +1,6 @@
 {
   "name": "moip-sdk-js",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Moip SDK Node.js",
   "main": "index.js",
   "files": [
