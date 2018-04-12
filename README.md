@@ -11,6 +11,10 @@
 
 SDK Javascript que possibilita a criptografia de dados sensíveis de cartão no browser do cliente assim como identificação e validação de números de cartão de crédito. Para Web / React Native / Ionic 1 / Ionic 3 / NodeJS.
 
+# Exemplo
+
+Veja um exemplo funcional utilizando o JavaScript de criptografia de cartão [clicando aqui](http://moip.github.io/moip-encryption-js-jquery/).
+
 ## Plataformas
 
 * [Web e Ionic 1](#web-e-ionic-1)
