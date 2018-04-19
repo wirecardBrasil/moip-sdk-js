@@ -1,58 +1,58 @@
-import MoipValidator from './validator';
-import Encrypt from './encrypt';
+import MoipValidator from './validator'
+import Encrypt from './encrypt'
 
 export default class MoipCreditCard {
-	static setEncrypter(encrypter, name) {
-		Encrypt.setEncrypter(encrypter, name);
-		return this;
-	}
+  static setEncrypter (encrypter, name) {
+    Encrypt.setEncrypter(encrypter, name)
+    return this
+  }
 
-	static setCreditCard(creditCard) {
-		if(creditCard) {
-			this.creditCard = Object.assign(creditCard, {
-				number: MoipValidator.normalizeCardNumber(creditCard.number)
-			});
-		}
+  static setCreditCard (creditCard) {
+    if (creditCard) {
+      this.creditCard = Object.assign(creditCard, {
+        number: MoipValidator.normalizeCardNumber(creditCard.number)
+      })
+    }
 
-		return this;
-	}
+    return this
+  }
 
-	static getCreditCard() {
-		return this.creditCard;
-	}
+  static getCreditCard () {
+    return this.creditCard
+  }
 
-	static setPubKey(pubKey) {
-		this.pubKey = pubKey;
-		return this;
-	}
+  static setPubKey (pubKey) {
+    this.pubKey = pubKey
+    return this
+  }
 
-	static hash() {
-		const { number, cvc, expirationMonth, expirationYear } = this.creditCard;
+  static hash () {
+    const {number, cvc, expirationMonth, expirationYear} = this.creditCard
 
-    	if (!this.pubKey ||
-    		!number ||
-    		!cvc ||
-    		!expirationMonth ||
-    		!expirationYear) {
-    		return Promise.resolve(null);
-    	}
+    if (!this.pubKey ||
+      !number ||
+      !cvc ||
+      !expirationMonth ||
+      !expirationYear) {
+      return Promise.resolve(null)
+    }
 
-    	const toEncrypt = [
-    		`number=${number}`,
-    		`cvc=${cvc}`,
-    		`expirationMonth=${expirationMonth}`,
-    		`expirationYear=${expirationYear}`,
-    	].join('&');
+    const toEncrypt = [
+      `number=${number}`,
+      `cvc=${cvc}`,
+      `expirationMonth=${expirationMonth}`,
+      `expirationYear=${expirationYear}`,
+    ].join('&')
 
-    	return Encrypt.encrypt(toEncrypt, this.pubKey);
-  	}
+    return Encrypt.encrypt(toEncrypt, this.pubKey)
+  }
 
-  	static isValid() {
-  		return MoipValidator.isValid(this.creditCard);
-  	}
+  static isValid () {
+    return MoipValidator.isValid(this.creditCard)
+  }
 
-  	static cardType() {
-    	const type =  MoipValidator.cardType(this.creditCard.number);
-    	return type ? type.brand : null;
-  	}
+  static cardType () {
+    const type = MoipValidator.cardType(this.creditCard.number)
+    return type ? type.brand : null
+  }
 }

@@ -129,19 +129,29 @@ Neste cenário, é necessário instalar e importar uma lib de criptografia de te
 #### Instalar
 
 ```
-yarn add moip-sdk-js node-rsa
+yarn add moip-sdk-js node-jsencrypt
 // or
-npm i moip-sdk-js node-rsa --save
+npm i moip-sdk-js node-jsencrypt --save
 ```
 
 #### Usar
 
 ```javascript
-import NodeRSA from 'node-rsa';
-import { MoipCreditCard } from 'moip-sdk-js';
+const JSEncrypt = require('node-jsencrypt');
+const MoipCreditCard = require('moip-sdk-js').MoipCreditCard;
+
+const pubKey = `-----BEGIN PUBLIC KEY-----
+                MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoBttaXwRoI1Fbcond5mS
+                7QOb7X2lykY5hvvDeLJelvFhpeLnS4YDwkrnziM3W00UNH1yiSDU+3JhfHu5G387
+                O6uN9rIHXvL+TRzkVfa5iIjG+ap2N0/toPzy5ekpgxBicjtyPHEgoU6dRzdszEF4
+                ItimGk5ACx/lMOvctncS5j3uWBaTPwyn0hshmtDwClf6dEZgQvm/dNaIkxHKV+9j
+                Mn3ZfK/liT8A3xwaVvRzzuxf09xJTXrAd9v5VQbeWGxwFcW05oJulSFjmJA9Hcmb
+                DYHJT+sG2mlZDEruCGAzCVubJwGY1aRlcs9AQc1jIm/l8JwH7le2kpk3QoX+gz0w
+                WwIDAQAB
+                -----END PUBLIC KEY-----`;
 
 MoipCreditCard
-    .setEncrypter(NodeRSA, 'node')
+    .setEncrypter(JSEncrypt, 'node')
     .setPubKey(pubKey)
     .setCreditCard({
         number: '4012001037141112',
