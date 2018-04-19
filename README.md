@@ -78,6 +78,16 @@ npm i moip-sdk-js jsencrypt --save
 import jsencrypt from 'jsencrypt';
 import { MoipCreditCard } from 'moip-sdk-js';
 
+const pubKey = `-----BEGIN PUBLIC KEY-----
+                MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoBttaXwRoI1Fbcond5mS
+                7QOb7X2lykY5hvvDeLJelvFhpeLnS4YDwkrnziM3W00UNH1yiSDU+3JhfHu5G387
+                O6uN9rIHXvL+TRzkVfa5iIjG+ap2N0/toPzy5ekpgxBicjtyPHEgoU6dRzdszEF4
+                ItimGk5ACx/lMOvctncS5j3uWBaTPwyn0hshmtDwClf6dEZgQvm/dNaIkxHKV+9j
+                Mn3ZfK/liT8A3xwaVvRzzuxf09xJTXrAd9v5VQbeWGxwFcW05oJulSFjmJA9Hcmb
+                DYHJT+sG2mlZDEruCGAzCVubJwGY1aRlcs9AQc1jIm/l8JwH7le2kpk3QoX+gz0w
+                WwIDAQAB
+                -----END PUBLIC KEY-----`;
+
 MoipCreditCard
     .setEncrypter(jsencrypt, 'ionic')
     .setPubKey(pubKey)
@@ -108,6 +118,16 @@ npm i moip-sdk-js react-native-rsa-native --save
 ```javascript
 import { RSA } from 'react-native-rsa-native';
 import { MoipCreditCard } from 'moip-sdk-js';
+
+const pubKey = `-----BEGIN PUBLIC KEY-----
+                MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoBttaXwRoI1Fbcond5mS
+                7QOb7X2lykY5hvvDeLJelvFhpeLnS4YDwkrnziM3W00UNH1yiSDU+3JhfHu5G387
+                O6uN9rIHXvL+TRzkVfa5iIjG+ap2N0/toPzy5ekpgxBicjtyPHEgoU6dRzdszEF4
+                ItimGk5ACx/lMOvctncS5j3uWBaTPwyn0hshmtDwClf6dEZgQvm/dNaIkxHKV+9j
+                Mn3ZfK/liT8A3xwaVvRzzuxf09xJTXrAd9v5VQbeWGxwFcW05oJulSFjmJA9Hcmb
+                DYHJT+sG2mlZDEruCGAzCVubJwGY1aRlcs9AQc1jIm/l8JwH7le2kpk3QoX+gz0w
+                WwIDAQAB
+                -----END PUBLIC KEY-----`;
 
 MoipCreditCard
     .setEncrypter(RSA, 'react-native')
