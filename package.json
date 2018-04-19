@@ -1,6 +1,6 @@
 {
   "name": "moip-sdk-js",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Moip SDK Node.js",
   "main": "index.js",
   "files": [
@@ -22,7 +22,8 @@
     "webpack": "^4.0.1",
     "webpack-cli": "^2.0.9",
     "webpack-concat-plugin": "3.0.0-beta.0",
-    "webpack-node-externals": "^1.6.0"
+    "webpack-node-externals": "^1.6.0",
+    "node-jsencrypt": "^1.0.0"
   },
   "scripts": {
     "build:lib": "WEBPACK_ENV=lib webpack",
@@ -30,8 +31,5 @@
     "test": "babel-node ./node_modules/.bin/babel-istanbul cover run-test.js",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "publish": ""
-  },
-  "dependencies": {
-    "node-rsa": "^0.4.2"
   }
 }
