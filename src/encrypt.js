@@ -25,7 +25,6 @@ export default class Encrypt {
   }
 
   static jsEncrypt (value, pubKey) {
-
     return new Promise((resolve) => {
       const jsEncrypt = new this.encrypter({default_key_size: 2048})
       jsEncrypt.setPublicKey(pubKey)
