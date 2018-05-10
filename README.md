@@ -101,6 +101,8 @@ MoipCreditCard
     .then(hash => console.log('hash', hash));
 ```
 
+Veja aqui um exemplo de app utilizando Ionic 3 e a SDK de criptografia: [link](https://github.com/brunoosilva/ionic-3-moip-sdk-js-example)
+
 ### React Native
 
 Neste cenário, é necessário instalar e importar uma lib de criptografia de terceiro para gerar o hash do cartão de crédito. Após importar, lembrar de passar o contexto dele atravéz do método **setEncrypter**, como mostrado abaixo no exemplo.
