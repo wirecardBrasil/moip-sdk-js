@@ -113,6 +113,10 @@ Neste cenário, é necessário instalar e importar uma lib de criptografia de te
 yarn add moip-sdk-js react-native-rsa-native
 // or
 npm i moip-sdk-js react-native-rsa-native --save
+
+// A biblioteca react-native-rsa-native requere instalação e configuração automática
+// Consultar repositório da biblioteca para particularidades no iOS
+react-native link react-native-rsa-native
 ```
 
 #### Usar
