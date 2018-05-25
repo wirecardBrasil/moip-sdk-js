@@ -20,7 +20,7 @@ Veja um exemplo funcional utilizando o JavaScript de criptografia de cartão [cl
 * [Web e Ionic 1](#web-e-ionic-1)
 * [Ionic 3](#ionic-3)
 * [React Native](#react-native)
-* [NodeJS](#nodejs)
+* [NodeJS ou React Web](#nodejs-ou-react-web)
 
 
 ## Observação
@@ -148,7 +148,7 @@ MoipCreditCard
     .then(hash => console.log('hash', hash));
 ```
 
-### NodeJS
+### NodeJS ou React Web
 
 Neste cenário, é necessário instalar e importar uma lib de criptografia de terceiro para gerar o hash do cartão de crédito. Após importar, lembrar de passar o contexto dele atravéz do método **setEncrypter**, como mostrado abaixo no exemplo.
 
@@ -165,6 +165,11 @@ npm i moip-sdk-js node-jsencrypt --save
 ```javascript
 const JSEncrypt = require('node-jsencrypt');
 const MoipCreditCard = require('moip-sdk-js').MoipCreditCard;
+
+// or if you are using the import syntax (which is always the case for React Web) you can do the following:
+//
+// import { MoipCreditCard } from 'moip-sdk-js'
+// import JSEncrypt from 'node-jsencrypt'
 
 const pubKey = `-----BEGIN PUBLIC KEY-----
                 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoBttaXwRoI1Fbcond5mS
