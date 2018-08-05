@@ -247,6 +247,7 @@ MoipValidator.cardType('9191919191919191');    //return [Object]null
 
 - [Bruno Oliveira](https://github.com/brunoosilva)
 - [Reneé Rojas](https://github.com/reneerojas)
+- [Valmir Barbosa](https://github.com/valmirphp)
 
 ## Licença
 
