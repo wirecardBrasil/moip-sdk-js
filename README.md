@@ -1,11 +1,11 @@
 <img src="https://gist.githubusercontent.com/joaolucasl/00f53024cecf16410d5c3212aae92c17/raw/1789a2131ee389aeb44e3a9d5333f59cfeebc089/moip-icon.png" align="right" />
 
-# Moip SDK Javascript (criptografia de cartão)
+# Wirecard SDK Javascript (criptografia de cartão)
 > SDK Javascript para a criptografia de cartões de crédito.
 
-[![Build Status](https://travis-ci.org/moip/moip-sdk-js.svg)](https://travis-ci.org/brunoosilva/moip-sdk-js) 
-[![Coverage Status](https://coveralls.io/repos/github/moip/moip-sdk-js/badge.svg?branch=master)](https://coveralls.io/github/moip/moip-sdk-js?branch=master)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/moip/moip-sdk-js/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/wirecardbrasil/moip-sdk-js.svg)](https://travis-ci.org/brunoosilva/moip-sdk-js) 
+[![Coverage Status](https://coveralls.io/repos/github/wirecardbrasil/moip-sdk-js/badge.svg?branch=master)](https://coveralls.io/github/wirecardbrasil/moip-sdk-js?branch=master)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://github.com/wirecardbrasil/moip-sdk-js/blob/master/LICENSE)
 
 ## O que é?
 
@@ -13,7 +13,7 @@ SDK Javascript que possibilita a criptografia de dados sensíveis de cartão no 
 
 # Exemplo
 
-Veja um exemplo funcional utilizando o JavaScript de criptografia de cartão [clicando aqui](http://moip.github.io/moip-encryption-js-jquery/).
+Veja um exemplo funcional utilizando o JavaScript de criptografia de cartão [clicando aqui](http://wirecardbrasil.github.io/moip-encryption-js-jquery/).
 
 ## Plataformas
 
@@ -25,7 +25,7 @@ Veja um exemplo funcional utilizando o JavaScript de criptografia de cartão [cl
 
 ## Observação
 
-Para todas as plataformar, é necessário passar a sua public key como parâmetro para gerar o hash dos dados do cartão de crédito. Essa informação você pode obter pelo painel da moip, na seção de **Chave de acesso** https://conta.moip.com.br/configurations/api_credentials
+Para todas as plataformar, é necessário passar a sua public key como parâmetro para gerar o hash dos dados do cartão de crédito. Essa informação você pode obter pelo painel da Wirecard, na seção de **Chave de acesso** https://conta.wirecard.com.br/configurations/api_credentials
 
 ```shell
 -----BEGIN PUBLIC KEY-----
@@ -251,4 +251,4 @@ MoipValidator.cardType('9191919191919191');    //return [Object]null
 
 ## Licença
 
-[The MIT License](https://github.com/moip/moip-sdk-js/blob/master/LICENSE)
+[The MIT License](https://github.com/wirecardbrasil/moip-sdk-js/blob/master/LICENSE)
