@@ -181,7 +181,7 @@ export default class MoipValidator {
     const getBin = (cardNum) => cardNum.substring(0, 6)
 
     let brands = {
-        VISA: {matches: (cardNum) => { return /^4\d{15}$/.test(cardNum) }},
+        VISA: {matches: (cardNum) => { return /^4(?:\d{18}|\d{15}|\d{12})$/.test(cardNum) }},
         MASTERCARD: {
           matches: (cardNum) => {
             return /^5[1-5]\d{14}$/.test(cardNum) ||
@@ -189,8 +189,10 @@ export default class MoipValidator {
                 this._isInMasterCardRanges(getBin(cardNum)))
           }
         },
+        AURA: {matches: (cardNum) => { return /^(5078\d{2})(\d{2})(\d{11})$/.test(cardNum) }},
         AMEX: {matches: (cardNum) => { return /^3[4,7]\d{13}$/.test(cardNum) }},
         DINERS: {matches: (cardNum) => { return /^3[0,6,8]\d{12}$/.test(cardNum) }},
+        DISCOVER: {matches: (cardNum) => { return /^6[0,5]\d{14}$/.test(cardNum) }},
         HIPERCARD: {
           matches: (cardNum) => {
             return cardNum !== null &&
@@ -225,8 +227,10 @@ export default class MoipValidator {
                 this._isInMasterCardRanges(getBin(cardNum)))
           }
         },
+        AURA: {matches: (cardNum) => { return /^50\d*$/.test(cardNum) }},
         AMEX: {matches: (cardNum) => { return /^3[4,7]\d{2}\d*$/.test(cardNum) }},
         DINERS: {matches: (cardNum) => { return /^3(?:0[0-5]|[68][0-9])+\d*$/.test(cardNum) }},
+        DISCOVER: {matches: (cardNum) => { return /^6(?:5|011|4[4-9]|2212[6-9]|221[3-9]\d|22[2-8]\d\d|229[0-1]\d|2292[0-5])+\d*$/.test(cardNum) }},
         HIPERCARD: {
           matches: (cardNum) => {
             return cardNum !== null &&
@@ -260,12 +264,14 @@ export default class MoipValidator {
     // a) VISA is identified by the broad prefix '4', shadowing more specific ELO prefixes
     // b) HIPERCARD has precendence over DINERS for prefix 3841 (loose check)
     if (brands.ELO.matches(cardNumber)) { return {brand: 'ELO'} }
+    if (brands.AURA.matches(cardNumber)) { return {brand: 'AURA'} }
     if (brands.HIPER.matches(cardNumber)) { return {brand: 'HIPER'} }
     if (brands.VISA.matches(cardNumber)) { return {brand: 'VISA'} }
     if (brands.MASTERCARD.matches(cardNumber)) { return {brand: 'MASTERCARD'} }
     if (brands.AMEX.matches(cardNumber)) { return {brand: 'AMEX'} }
     if (brands.HIPERCARD.matches(cardNumber)) { return {brand: 'HIPERCARD'} }
     if (brands.DINERS.matches(cardNumber)) { return {brand: 'DINERS'} }
+    if (brands.DISCOVER.matches(cardNumber)) { return {brand: 'DISCOVER'} }
 
     return null
   }
