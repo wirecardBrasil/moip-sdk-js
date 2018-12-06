@@ -99,9 +99,13 @@ describe('MoipValidator', () =>  {
         assertCard('36263526914736', 'DINERS');
       });
 
-      it('recognizes AURA', () => {
-        assertCard('5078601870000127985', 'AURA');
-      });
+      it('recognizes AURA', () => [
+          '5000000000000000', '5010000000000000', '5020000000000000',
+          '5030000000000000', '5040000000000000', '5050000000000000',
+          '5060000000000000', '5070000000000000', '5080000000000000',
+          '5078601912345600019', '5078601800003247449', 5078601870000127985
+        ].forEach(cardNumber => assertCard(cardNumber, 'AURA'))
+      );
 
       it('recognizes ELO', () => {
         assertCard('4514160123456789', 'ELO');
@@ -128,12 +132,12 @@ describe('MoipValidator', () =>  {
         assertCard('2720793872642452', 'MASTERCARD');
       });
 
-      it('recognizes DISCOVER', () => {
-        assertCard('6011111111111117', 'DISCOVER');
-        assertCard('6011000990139424', 'DISCOVER');
-        assertCard('6011199551868916', 'DISCOVER');
-        assertCard('6011236044609927', 'DISCOVER');
-      });
+      it('recognizes DISCOVER', () => [
+        '6011236044609927', '6011091915358231', '6011726125958524',
+        '6011111111111117', '6011000990139424', '6511020000245045'
+      ].forEach(cardNumber => assertCard(cardNumber, 'DISCOVER'))
+      );
+
     });
 
 

@@ -189,7 +189,7 @@ export default class MoipValidator {
                 this._isInMasterCardRanges(getBin(cardNum)))
           }
         },
-        AURA: {matches: (cardNum) => { return /^(5078\d{2})(\d{2})(\d{11})$/.test(cardNum) }},
+        AURA: {matches: (cardNum) => { return /^50(?:\d{14}|\d{17})$/.test(cardNum) }},
         AMEX: {matches: (cardNum) => { return /^3[4,7]\d{13}$/.test(cardNum) }},
         DINERS: {matches: (cardNum) => { return /^3[0,6,8]\d{12}$/.test(cardNum) }},
         DISCOVER: {matches: (cardNum) => { return /^6[0,5]\d{14}$/.test(cardNum) }},
@@ -264,7 +264,6 @@ export default class MoipValidator {
     // a) VISA is identified by the broad prefix '4', shadowing more specific ELO prefixes
     // b) HIPERCARD has precendence over DINERS for prefix 3841 (loose check)
     if (brands.ELO.matches(cardNumber)) { return {brand: 'ELO'} }
-    if (brands.AURA.matches(cardNumber)) { return {brand: 'AURA'} }
     if (brands.HIPER.matches(cardNumber)) { return {brand: 'HIPER'} }
     if (brands.VISA.matches(cardNumber)) { return {brand: 'VISA'} }
     if (brands.MASTERCARD.matches(cardNumber)) { return {brand: 'MASTERCARD'} }
@@ -272,6 +271,7 @@ export default class MoipValidator {
     if (brands.HIPERCARD.matches(cardNumber)) { return {brand: 'HIPERCARD'} }
     if (brands.DINERS.matches(cardNumber)) { return {brand: 'DINERS'} }
     if (brands.DISCOVER.matches(cardNumber)) { return {brand: 'DISCOVER'} }
+    if (brands.AURA.matches(cardNumber)) { return {brand: 'AURA'} }
 
     return null
   }
