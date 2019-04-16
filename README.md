@@ -53,7 +53,7 @@ Neste cenário, a lib de criptografia já está compilada junto com o código do
             number: '4012001037141112',
             cvc: '123',
             expirationMonth: '05',
-            expirationYear: '18'
+            expirationYear: '22'
         })
         .hash()
         .then(hash => console.log('hash', hash));
@@ -95,7 +95,7 @@ MoipCreditCard
         number: '4012001037141112',
         cvc: '123',
         expirationMonth: '05',
-        expirationYear: '18'
+        expirationYear: '22'
     })
     .hash()
     .then(hash => console.log('hash', hash));
@@ -142,7 +142,7 @@ MoipCreditCard
         number: '4012001037141112',
         cvc: '123',
         expirationMonth: '05',
-        expirationYear: '18'
+        expirationYear: '22'
     })
     .hash()
     .then(hash => console.log('hash', hash));
@@ -188,7 +188,7 @@ MoipCreditCard
         number: '4012001037141112',
         cvc: '123',
         expirationMonth: '05',
-        expirationYear: '18'
+        expirationYear: '22'
     })
     .hash()
     .then(hash => console.log('hash', hash));
@@ -227,7 +227,7 @@ MoipValidator.isSecurityCodeValid(creditCardNumber, cvc); //return true/false
 ### Data de expiração do cartão de crédito
 ```javascript
 const month = '10';
-const year = '2020';
+const year = '2022';
 MoipValidator.isExpiryDateValid(month, year);	//return true/false
 ```
 
