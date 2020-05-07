@@ -25,7 +25,7 @@ Veja um exemplo funcional utilizando o JavaScript de criptografia de cartão [cl
 
 ## Observação
 
-Para todas as plataformar, é necessário passar a sua public key como parâmetro para gerar o hash dos dados do cartão de crédito. Essa informação você pode obter pelo painel da Wirecard, na seção de **Chave de acesso** https://conta.wirecard.com.br/configurations/api_credentials
+Para todas as plataformas, é necessário passar a sua public key como parâmetro para gerar o hash dos dados do cartão de crédito. Essa informação você pode obter pelo painel da Wirecard, na seção de **Chave de acesso** https://conta.wirecard.com.br/configurations/api_credentials
 
 ```shell
 -----BEGIN PUBLIC KEY-----
